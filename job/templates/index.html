@@ -1,0 +1,51 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<div class="container-fluid m-1">
+    {% if messages %}
+        {% for message in messages %}
+            <li {% if message.tags %}class="messages alert alert-dismissible alert-{{ message.tags }}" role="alert"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    {% endif %}
+</div>
+     <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="row g-0 about-bg rounded overflow-hidden">
+                            <div class="col-6 text-start">
+                                <img class="img-fluid w-100" src="{% static 'images/about-1.jpg' %}">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid" src="{% static 'images/about-2.jpg' %}" style="width: 85%; margin-top: 15%;">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid" src="{% static 'images/about-2.jpg' %}" style="width: 85%;">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid w-100" src="{% static 'images/about-4.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">We Help To Get The Best Job And Find A Talent</h1>
+                        <p class="mb-4">Let us guide you through every step of the hiring process, from initial application to final negotiation, ensuring a smooth and rewarding experience for all parties involved.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Personal guidence</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Access to Opportunity</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Supportive Community </p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Networking Opportunities </p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Personalized Matches </p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Expert Insights </p>
+                         <a href="/user_login/" class="btn btn-primary">Search A Job</a>
+                        <a href="/recruiter_login/" class="btn btn-primary">Find A Talent</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+{% endblock body %}
